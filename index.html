@@ -20,6 +20,10 @@
 </html>
 
 <style>
+  html{
+    font-size: 12px;
+  }
+
   body {
     background-color: #121212;
     padding-top: 10rem;
@@ -54,7 +58,7 @@
   }
 
   .item {
-    width: 60rem;
+    width: 70rem;
     height: 42rem;
     border: solid 0.25rem #382bf0;
     margin-inline: auto;
@@ -110,7 +114,7 @@
   }
 
   .second {
-    width: 25rem;
+    width: 35rem;
     border-inline: solid 0.25rem #382bf0;
   }
 
@@ -283,7 +287,7 @@
     let enters = []
     let max = 50
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 50; i++) {
       room1 = 0
       room2 = 0
       turning = [true, true, true]
@@ -291,7 +295,7 @@
       enters = []
       max = 50
 
-      let enter = Math.floor(((Math.random() * 10) / 2) + 2)
+      let enter = Math.floor(((Math.random() * 10) / 2) + 3)
       for (let e = 0; e < enter; e++) {
         customers.push({
           index: index,
@@ -321,6 +325,7 @@
           max++
         } else if (!max) {
           c.room = 0
+          max++
         } else if (c.turn == -1) {
           if (turning[0]) {
             turnings.wait()
